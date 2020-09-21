@@ -42,9 +42,13 @@ public class PlayerMovement : MonoBehaviour
             isInteractingWithWeapon = !isInteractingWithWeapon;
             availableWeaponSlot.SetPlayerInteraction(isInteractingWithWeapon);
         }
-        if (isInteractingWithWeapon && Input.GetButtonDown("Fire1"))
+        if (isInteractingWithWeapon)
         {
-            availableWeaponSlot.Fire();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                availableWeaponSlot.Fire();
+            }
+            availableWeaponSlot.AimAt(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         }
     }
 
