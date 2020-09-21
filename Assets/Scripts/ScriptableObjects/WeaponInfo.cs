@@ -15,5 +15,6 @@ public class WeaponInfo : ScriptableObject
     public string displayName;
     public Sprite sprite;
     public float repeatDelay = 0.2f;
-    public GameObject projectilePrefab;
+    public float damage = 5f;
+    public Projectile projectilePrefab;
 }

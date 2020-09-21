@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5325204440256180562}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPoint: {fileID: 5755963068716449448}
+  faction: 1
 --- !u!1 &4554393413565249583
 GameObject:
   m_ObjectHideFlags: 0

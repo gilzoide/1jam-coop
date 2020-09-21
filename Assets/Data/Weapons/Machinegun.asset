@@ -16,4 +16,4 @@ MonoBehaviour:
   displayName: Machinegun
   sprite: {fileID: 21300000, guid: dc27204d3ebb683c89db4d11f04580ac, type: 3}
   repeatDelay: 0.2
-  projectilePrefab: {fileID: 1003353142130141091, guid: 7512f7e490ae5c00c995bedc3c432832, type: 3}
+  projectilePrefab: {fileID: 462647291000486902, guid: 7512f7e490ae5c00c995bedc3c432832, type: 3}

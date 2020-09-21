@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPoint: {fileID: 8290392384579082126}
+  faction: 1
 --- !u!1 &7151668309282236876
 GameObject:
   m_ObjectHideFlags: 0

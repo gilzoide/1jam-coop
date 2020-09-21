@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24b81aaf8356e1773b6de4ae45e656b9, type: 3}
-  m_Name: PlayerPistol
+  m_Script: {fileID: 11500000, guid: 8cfaa57112211550cb2bedf49982c914, type: 3}
+  m_Name: TrainEnergyInfo
   m_EditorClassIdentifier: 
-  type: 1
-  displayName: Pistol
-  sprite: {fileID: 0}
-  repeatDelay: 0.5
-  projectilePrefab: {fileID: 462647291000486902, guid: 7512f7e490ae5c00c995bedc3c432832, type: 3}
+  maxEnergy: 100
