@@ -6,15 +6,28 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 4f;
     public Rigidbody2D rigidBody;
+    public WeaponInfo personalWeaponInfo;
+    public Crosshair crosshair;
+    public RepeatedShooter repeatedShooter;
 
     private WeaponSlot availableWeaponSlot;
     private bool isInteractingWithWeapon = false;
+    private float horizontalAxis;
+    private float verticalAxis;
 
     void Awake()
     {
         if (!rigidBody)
         {
             rigidBody = GetComponent<Rigidbody2D>();
+        }
+        if (!crosshair)
+        {
+            crosshair = GetComponentInChildren<Crosshair>();
+        }
+        if (!repeatedShooter)
+        {
+            repeatedShooter = GetComponentInChildren<RepeatedShooter>();
         }
     }
 
@@ -37,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        horizontalAxis = Input.GetAxis("Horizontal");
+        verticalAxis = Input.GetAxis("Vertical");
         if (availableWeaponSlot && availableWeaponSlot.AvailableForInteraction && Input.GetButtonDown("Jump"))
         {
             isInteractingWithWeapon = !isInteractingWithWeapon;
@@ -48,7 +63,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 availableWeaponSlot.Fire();
             }
-            availableWeaponSlot.AimAt(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            availableWeaponSlot.RotateCrosshair(horizontalAxis);
+        }
+        else if (Input.GetButton("Fire1"))
+        {
+            crosshair.AimAt(horizontalAxis, verticalAxis);
+            repeatedShooter.Shoot(personalWeaponInfo);
         }
     }
 
@@ -56,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isInteractingWithWeapon)
         {
-            Vector2 movingTo = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            Vector2 movingTo = new Vector2(horizontalAxis, verticalAxis);
             rigidBody.velocity = movingTo * speed;
         }
     }

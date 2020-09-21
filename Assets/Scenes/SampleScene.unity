@@ -271,16 +271,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3360335393534598687, guid: 021f18a741df843aebecc13fbc5e5025, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 748179195
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360335393534598687, guid: 021f18a741df843aebecc13fbc5e5025, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360335393534598687, guid: 021f18a741df843aebecc13fbc5e5025, type: 3}
-      propertyPath: m_DrawMode
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3887135267976789992, guid: 021f18a741df843aebecc13fbc5e5025, type: 3}
       propertyPath: m_UseFullKinematicContacts

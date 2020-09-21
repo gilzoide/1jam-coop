@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6112491101754873427}
   - component: {fileID: 3591325839440944345}
   - component: {fileID: 7178625378781262616}
+  - component: {fileID: 4521843239603148455}
   m_Layer: 0
   m_Name: Slot
   m_TagString: WeaponSlot
@@ -157,6 +158,20 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6112491101754873427}
   emptySlotSprite: {fileID: 21300000, guid: 77026f29153fbd90b86ac5a6b4a47f99, type: 3}
   crosshair: {fileID: 5280523442839278841}
+  repeatedShooter: {fileID: 4521843239603148455}
+--- !u!114 &4521843239603148455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5435475355529510128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e9cde09d7dfcbff97a4548e70f352a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpawnPoint: {fileID: 8290392384579082126}
 --- !u!1 &7151668309282236876
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +220,6 @@ MonoBehaviour:
   minAngle: 0
   maxAngle: 0
   angularSpeed: 60
-  projectileSpawnPoint: {fileID: 8290392384579082126}
 --- !u!1 &9111843539560572409
 GameObject:
   m_ObjectHideFlags: 0
