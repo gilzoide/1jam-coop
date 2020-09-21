@@ -13,6 +13,7 @@ public class WeaponSlot : MonoBehaviour
 
     private bool havePlayerInteracting = false;
     private WeaponInfo.Type weaponType = WeaponInfo.Type.None;
+    private float lastShotTime;
 
     void Awake()
     {
@@ -33,6 +34,7 @@ public class WeaponSlot : MonoBehaviour
         currentWeaponInfo = weaponInfo;
         weaponType = weaponInfo?.type ?? WeaponInfo.Type.None;
         spriteRenderer.sprite = weaponInfo?.sprite ?? emptySlotSprite;
+        lastShotTime = 0f;
     }
 
     public void SetPlayerInteraction(bool playerInteracting)
@@ -44,7 +46,11 @@ public class WeaponSlot : MonoBehaviour
     public void Fire()
     {
         Debug.Assert(AvailableForInteraction && havePlayerInteracting);
-        crosshair.Shoot(currentWeaponInfo.projectilePrefab);
+        if (Time.time > lastShotTime + currentWeaponInfo.repeatDelay)
+        {
+            lastShotTime = Time.time;
+            crosshair.Shoot(currentWeaponInfo.projectilePrefab);
+        }
     }
 
     public void AimAt(float horizontalAxis, float verticalAxis)

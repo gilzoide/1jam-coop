@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isInteractingWithWeapon)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButton("Fire1"))
             {
                 availableWeaponSlot.Fire();
             }
