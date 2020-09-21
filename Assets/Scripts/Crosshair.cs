@@ -7,6 +7,7 @@ public class Crosshair : MonoBehaviour
     public float minAngle = 0;
     public float maxAngle = 0;
     public float angularSpeed = 30f;
+    public Transform projectileSpawnPoint;
 
     private float angle;
 
@@ -23,6 +24,11 @@ public class Crosshair : MonoBehaviour
             angle = Mathf.Clamp(angle, minAngle, maxAngle);
             transform.eulerAngles = new Vector3(0, 0, angle);
         }
+    }
+
+    public void Shoot(GameObject projectilePrefab)
+    {
+        GameObject.Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
     }
 
     [ContextMenu("Set minAngle")]

@@ -44,7 +44,7 @@ public class WeaponSlot : MonoBehaviour
     public void Fire()
     {
         Debug.Assert(AvailableForInteraction && havePlayerInteracting);
-        GameObject projectile = GameObject.Instantiate(currentWeaponInfo.projectilePrefab, crosshair.transform.position, crosshair.transform.rotation);
+        crosshair.Shoot(currentWeaponInfo.projectilePrefab);
     }
 
     public void AimAt(float horizontalAxis, float verticalAxis)
