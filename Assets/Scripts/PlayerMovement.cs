@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private WeaponSlot availableWeaponSlot;
     private bool isInteractingWithWeapon = false;
+    private bool isShooting;
     private float horizontalAxis;
     private float verticalAxis;
 
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalAxis = Input.GetAxis("Horizontal");
         verticalAxis = Input.GetAxis("Vertical");
+        isShooting = Input.GetButton("Fire1");
         if (availableWeaponSlot && availableWeaponSlot.AvailableForInteraction && Input.GetButtonDown("Jump"))
         {
             isInteractingWithWeapon = !isInteractingWithWeapon;
@@ -59,15 +61,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isInteractingWithWeapon)
         {
-            if (Input.GetButton("Fire1"))
+            if (isShooting)
             {
                 availableWeaponSlot.Fire();
             }
             availableWeaponSlot.RotateCrosshair(horizontalAxis);
         }
-        else if (Input.GetButton("Fire1"))
+        else if (isShooting)
         {
-            crosshair.AimAt(horizontalAxis, verticalAxis);
+            crosshair.AimDirectional(horizontalAxis, verticalAxis);
             repeatedShooter.Shoot(personalWeaponInfo);
         }
     }

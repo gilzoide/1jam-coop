@@ -25,13 +25,19 @@ public class Crosshair : MonoBehaviour
         }
     }
 
-    public void AimAt(float horizontalAxis, float verticalAxis)
+    public void AimDirectional(float horizontalAxis, float verticalAxis)
     {
         if (Mathf.Abs(horizontalAxis) > 0.01 || Mathf.Abs(verticalAxis) > 0.01)
         {
             angle = Vector3.SignedAngle(Vector3.up, new Vector3(horizontalAxis, verticalAxis, 0), Vector3.forward);
             transform.eulerAngles = new Vector3(0, 0, angle);
         }
+    }
+
+    public void LookAt(Transform target)
+    {
+        angle = Vector3.SignedAngle(Vector3.up, target.position - transform.position, Vector3.forward);
+        transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
     [ContextMenu("Set minAngle")]
