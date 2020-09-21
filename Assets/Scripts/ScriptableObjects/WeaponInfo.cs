@@ -14,4 +14,5 @@ public class WeaponInfo : ScriptableObject
     public WeaponInfo.Type type;
     public string displayName;
     public Sprite sprite;
+    public GameObject projectilePrefab;
 }

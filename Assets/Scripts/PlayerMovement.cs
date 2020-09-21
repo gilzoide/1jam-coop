@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
             isInteractingWithWeapon = !isInteractingWithWeapon;
             availableWeaponSlot.SetPlayerInteraction(isInteractingWithWeapon);
         }
+        if (isInteractingWithWeapon && Input.GetButtonDown("Fire1"))
+        {
+            availableWeaponSlot.Fire();
+        }
     }
 
     void FixedUpdate()
