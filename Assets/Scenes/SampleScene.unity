@@ -874,6 +874,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ba4f655851fe833a50c42323f850d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2089686937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1961396305763117100, guid: e23c04374a6660313b6b789805b5f9d0, type: 3}
+  m_PrefabInstance: {fileID: 4703218548404735637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6636f34ca0b0aa944a263b076ab72eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1436708501707079487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1102,6 +1113,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1961396305763117100, guid: e23c04374a6660313b6b789805b5f9d0, type: 3}
+      propertyPath: onMaxEnergyChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 916245358}
+    - target: {fileID: 1961396305763117100, guid: e23c04374a6660313b6b789805b5f9d0, type: 3}
+      propertyPath: onEnergyChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 916245358}
+    - target: {fileID: 1961396305763117100, guid: e23c04374a6660313b6b789805b5f9d0, type: 3}
+      propertyPath: onEnergyEmpty.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 50468629}
     - target: {fileID: 2030639743253472114, guid: e23c04374a6660313b6b789805b5f9d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1298,6 +1321,10 @@ PrefabInstance:
       propertyPath: onEnergyEmpty.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7814362819111764060, guid: e23c04374a6660313b6b789805b5f9d0, type: 3}
+      propertyPath: energyHolder
+      value: 
+      objectReference: {fileID: 2089686937}
     - target: {fileID: 7937260028999919938, guid: e23c04374a6660313b6b789805b5f9d0, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 6

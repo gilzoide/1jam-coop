@@ -5,24 +5,14 @@ using UnityEngine.Events;
 
 public class TrainEnergy : MonoBehaviour
 {
-    public TrainEnergyInfo energyInfo;
-    public UnityEvent<float> onMaxEnergyChanged;
-    public UnityEvent<float> onEnergyChanged;
-    public UnityEvent onEnergyEmpty;
+    public EnergyHolder energyHolder;
 
-    public float CurrentEnergy {
-        get => _currentEnergy;
-        protected set {
-            _currentEnergy = value;
-            onEnergyChanged.Invoke(value);
-        }
-    }
-    private float _currentEnergy;
-
-    void Start()
+    void Awake()
     {
-        onMaxEnergyChanged.Invoke(energyInfo.maxEnergy);
-        CurrentEnergy = energyInfo.maxEnergy;
+        if (!energyHolder)
+        {
+            energyHolder = GetComponent<EnergyHolder>();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -32,11 +22,7 @@ public class TrainEnergy : MonoBehaviour
         {
             if (projectile.faction == Projectile.Faction.Enemy)
             {
-                CurrentEnergy -= projectile.weaponInfo.damage;
-                if (_currentEnergy <= 0f)
-                {
-                    onEnergyEmpty.Invoke();
-                }
+                energyHolder.CurrentEnergy -= projectile.weaponInfo.damage;
                 Destroy(projectile.gameObject);
             }
         }
