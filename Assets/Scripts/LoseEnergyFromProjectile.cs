@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class TrainEnergy : MonoBehaviour
+public class LoseEnergyFromProjectile : MonoBehaviour
 {
     public EnergyHolder energyHolder;
+    public Projectile.Faction faction;
 
     void Awake()
     {
@@ -20,7 +20,8 @@ public class TrainEnergy : MonoBehaviour
         Projectile projectile;
         if (collider.TryGetComponent<Projectile>(out projectile))
         {
-            if (projectile.faction == Projectile.Faction.Enemy)
+            Debug.Assert(faction != Projectile.Faction.None && projectile.faction != Projectile.Faction.None);
+            if (projectile.faction != this.faction)
             {
                 energyHolder.CurrentEnergy -= projectile.weaponInfo.damage;
                 Destroy(projectile.gameObject);
