@@ -6,21 +6,22 @@ using UnityEngine.Events;
 public class EnergyHolder : MonoBehaviour
 {
     public EnergyInfo energyInfo;
-    public UnityEvent<float> onMaxEnergyChanged;
     public UnityEvent<float> onEnergyChanged;
     public UnityEvent onEnergyEmpty;
 
+    private float inverseMaxEnergy;
+
     void Start()
     {
+        inverseMaxEnergy = 1f / energyInfo.maxEnergy;
         _currentEnergy = energyInfo.maxEnergy;
-        onMaxEnergyChanged.Invoke(_currentEnergy);
     }
 
     public float CurrentEnergy {
         get => _currentEnergy;
         set {
             _currentEnergy = value;
-            onEnergyChanged.Invoke(value);
+            onEnergyChanged.Invoke(value * inverseMaxEnergy);
             if (value <= 0f)
             {
                 onEnergyEmpty.Invoke();
