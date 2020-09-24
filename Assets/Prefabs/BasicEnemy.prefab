@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 3017489780284941153}
   - component: {fileID: 8947136388296638206}
   - component: {fileID: 1780861748643322285}
+  - component: {fileID: 3321316403993139340}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -368,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPoint: {fileID: 7412192939805499741}
-  faction: 2
+  faction: {fileID: 3321316403993139340}
 --- !u!114 &8947136388296638206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyHolder: {fileID: 7325026633499279310}
-  faction: 2
+  faction: {fileID: 3321316403993139340}
 --- !u!114 &1780861748643322285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,3 +402,16 @@ MonoBehaviour:
   onNear:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3321316403993139340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893058290036456185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a1eebf1eb80176e862709cdf5fc894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0

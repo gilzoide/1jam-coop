@@ -5,13 +5,20 @@ using UnityEngine;
 public class RepeatedShooter : MonoBehaviour
 {
     public Transform projectileSpawnPoint;
-    public Projectile.Faction faction;
+    public Faction faction;
 
     private float lastShotTime = 0f;
 
+    void Awake()
+    {
+        if (!faction)
+        {
+            faction = GetComponentInParent<Faction>();
+        }
+    }
+
     public void Shoot(WeaponInfo weaponInfo)
     {
-        Debug.Assert(faction != Projectile.Faction.None);
         if (Time.time > lastShotTime + weaponInfo.repeatDelay)
         {
             lastShotTime = Time.time;

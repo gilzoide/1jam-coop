@@ -5,13 +5,17 @@ using UnityEngine;
 public class LoseEnergyFromProjectile : MonoBehaviour
 {
     public EnergyHolder energyHolder;
-    public Projectile.Faction faction;
+    public Faction faction;
 
     void Awake()
     {
         if (!energyHolder)
         {
             energyHolder = GetComponent<EnergyHolder>();
+        }
+        if (!faction)
+        {
+            faction = GetComponentInParent<Faction>();
         }
     }
 
@@ -20,8 +24,7 @@ public class LoseEnergyFromProjectile : MonoBehaviour
         Projectile projectile;
         if (collider.TryGetComponent<Projectile>(out projectile))
         {
-            Debug.Assert(faction != Projectile.Faction.None && projectile.faction != Projectile.Faction.None);
-            if (projectile.faction != this.faction)
+            if (projectile.faction.faction != this.faction.faction)
             {
                 energyHolder.CurrentEnergy -= projectile.weaponInfo.damage;
                 Destroy(projectile.gameObject);

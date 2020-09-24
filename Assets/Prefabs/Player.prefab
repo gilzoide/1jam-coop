@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6925891614091838470}
   - component: {fileID: 3360335393534598685}
   - component: {fileID: 5325204440256180562}
+  - component: {fileID: 3780761777763133713}
   - component: {fileID: 7439921124342463726}
   m_Layer: 0
   m_Name: Player
@@ -165,6 +166,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPoint: {fileID: 5755963068716449448}
+  faction: {fileID: 3780761777763133713}
+--- !u!114 &3780761777763133713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360335393534598672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a1eebf1eb80176e862709cdf5fc894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   faction: 1
 --- !u!114 &7439921124342463726
 MonoBehaviour:
