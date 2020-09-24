@@ -40,12 +40,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void Interaction(InputAction.CallbackContext ctx)
     {
-        isInteracting = ctx.performed;
+        if (ctx.performed && availableWeaponSlot && availableWeaponSlot.AvailableForInteraction)
+        {
+            isInteractingWithWeapon = !isInteractingWithWeapon;
+            availableWeaponSlot.SetPlayerInteraction(isInteractingWithWeapon);
+        }
     }
 
     public void Movement(InputAction.CallbackContext ctx)
     {
-        movePosition = ctx.performed ? ctx.ReadValue<Vector2>() : Vector2.zero;
+        movePosition = ctx.ReadValue<Vector2>();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -67,11 +71,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (availableWeaponSlot && availableWeaponSlot.AvailableForInteraction && isInteracting)
-        {
-            isInteractingWithWeapon = !isInteractingWithWeapon;
-            availableWeaponSlot.SetPlayerInteraction(isInteractingWithWeapon);
-        }
         if (isInteractingWithWeapon)
         {
             if (isShooting)
@@ -80,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             }
             availableWeaponSlot.RotateCrosshair(movePosition.x);
         }
-        else if (isShooting)
+        else
         {
             crosshair.AimDirectional(movePosition.x, movePosition.y);
             repeatedShooter.Shoot(personalWeaponInfo);
@@ -89,9 +88,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isInteractingWithWeapon)
-        {
-            rigidBody.velocity = movePosition * speed;
-        }
+        rigidBody.velocity = isInteractingWithWeapon ? Vector2.zero : movePosition * speed;
     }
 }
