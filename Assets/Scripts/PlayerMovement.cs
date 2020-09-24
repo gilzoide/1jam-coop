@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public RepeatedShooter repeatedShooter;
 
     private WeaponSlot availableWeaponSlot;
+    private Vector2 movePosition;
     private bool isInteractingWithWeapon = false;
     private bool isShooting;
+    private bool isInteracting;
     private float horizontalAxis;
     private float verticalAxis;
 
@@ -30,6 +31,21 @@ public class PlayerMovement : MonoBehaviour
         {
             repeatedShooter = GetComponentInChildren<RepeatedShooter>();
         }
+    }
+
+    public void Shoot(InputAction.CallbackContext ctx)
+    {
+        isShooting = ctx.performed;
+    }
+
+    public void Interaction(InputAction.CallbackContext ctx)
+    {
+        isInteracting = ctx.performed;
+    }
+
+    public void Movement(InputAction.CallbackContext ctx)
+    {
+        movePosition = ctx.performed ? ctx.ReadValue<Vector2>() : Vector2.zero;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -51,10 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalAxis = Input.GetAxis("Horizontal");
-        verticalAxis = Input.GetAxis("Vertical");
-        isShooting = Input.GetButton("Fire1");
-        if (availableWeaponSlot && availableWeaponSlot.AvailableForInteraction && Input.GetButtonDown("Jump"))
+        if (availableWeaponSlot && availableWeaponSlot.AvailableForInteraction && isInteracting)
         {
             isInteractingWithWeapon = !isInteractingWithWeapon;
             availableWeaponSlot.SetPlayerInteraction(isInteractingWithWeapon);
@@ -65,11 +78,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 availableWeaponSlot.Fire();
             }
-            availableWeaponSlot.RotateCrosshair(horizontalAxis);
+            availableWeaponSlot.RotateCrosshair(movePosition.x);
         }
         else if (isShooting)
         {
-            crosshair.AimDirectional(horizontalAxis, verticalAxis);
+            crosshair.AimDirectional(movePosition.x, movePosition.y);
             repeatedShooter.Shoot(personalWeaponInfo);
         }
     }
@@ -78,8 +91,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isInteractingWithWeapon)
         {
-            Vector2 movingTo = new Vector2(horizontalAxis, verticalAxis);
-            rigidBody.velocity = movingTo * speed;
+            rigidBody.velocity = movePosition * speed;
         }
     }
 }
