@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class RechargeableShield : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    public ShieldInfo shieldInfo;
+    public InteractableObject shieldRechargerInteractable;
+    public EnergyHolder energyHolder;
 
     void Awake()
     {
-        if (!spriteRenderer)
+        if (!energyHolder)
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            energyHolder = GetComponentInParent<EnergyHolder>();
+        }
+        if (!shieldRechargerInteractable)
+        {
+            shieldRechargerInteractable = GetComponentInChildren<InteractableObject>();
         }
     }
 
-    public void SetAlpha(float alpha)
+    void Start()
     {
-        var color = spriteRenderer.color;
-        color.a = alpha;
-        spriteRenderer.color = color;
+        shieldRechargerInteractable.activationDelay = shieldInfo.activationDelay;
+    }
+
+    public void Recharge()
+    {
+        energyHolder.gameObject.SetActive(true);
+        energyHolder.Increment(shieldInfo.rechangePerActivation);
     }
 }

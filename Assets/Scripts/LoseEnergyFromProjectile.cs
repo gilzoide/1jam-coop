@@ -24,9 +24,9 @@ public class LoseEnergyFromProjectile : MonoBehaviour
         Projectile projectile;
         if (collider.TryGetComponent<Projectile>(out projectile))
         {
-            if (projectile.faction.faction != this.faction.faction)
+            if (projectile.faction.HostileTo(this.faction))
             {
-                energyHolder.CurrentEnergy -= projectile.weaponInfo.damage;
+                energyHolder.Decrement(projectile.weaponInfo.damage);
                 Destroy(projectile.gameObject);
             }
         }

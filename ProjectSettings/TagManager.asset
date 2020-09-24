@@ -7,6 +7,7 @@ TagManager:
   - WeaponSlot
   - Train
   - Enemy
+  - Interactable
   layers:
   - Default
   - TransparentFX

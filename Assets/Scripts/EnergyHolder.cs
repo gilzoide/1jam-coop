@@ -9,19 +9,21 @@ public class EnergyHolder : MonoBehaviour
     public UnityEvent<float> onEnergyChanged;
     public UnityEvent onEnergyEmpty;
 
+    private float maxEnergy;
     private float inverseMaxEnergy;
 
     void Start()
     {
-        inverseMaxEnergy = 1f / energyInfo.maxEnergy;
+        maxEnergy = energyInfo.maxEnergy;
+        inverseMaxEnergy = 1f / maxEnergy;
         _currentEnergy = energyInfo.maxEnergy;
     }
 
     public float CurrentEnergy {
         get => _currentEnergy;
-        set {
-            _currentEnergy = value;
-            onEnergyChanged.Invoke(value * inverseMaxEnergy);
+        protected set {
+            _currentEnergy = Mathf.Clamp(value, 0f, maxEnergy);
+            onEnergyChanged.Invoke(_currentEnergy * inverseMaxEnergy);
             if (value <= 0f)
             {
                 onEnergyEmpty.Invoke();
@@ -29,4 +31,14 @@ public class EnergyHolder : MonoBehaviour
         }
     }
     private float _currentEnergy;
+
+    public void Increment(float quantity)
+    {
+        CurrentEnergy += quantity;
+    }
+
+    public void Decrement(float quantity)
+    {
+        CurrentEnergy -= quantity;
+    }
 }

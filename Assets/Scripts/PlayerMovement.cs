@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public RepeatedShooter repeatedShooter;
 
     private WeaponSlot availableWeaponSlot;
+    private InteractableObject availableInteractableObject;
     private Vector2 movePosition;
     private bool isInteractingWithWeapon = false;
     private bool isShooting;
@@ -40,10 +41,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void Interaction(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && availableWeaponSlot && availableWeaponSlot.AvailableForInteraction)
+        // gameObject.scene.IsValid check is necessary due to a bug in InputSystem: http://answers.unity.com/answers/1762099/view.html
+        if (ctx.performed && gameObject.scene.IsValid())
         {
-            isInteractingWithWeapon = !isInteractingWithWeapon;
-            availableWeaponSlot.SetPlayerInteraction(isInteractingWithWeapon);
+            if (availableWeaponSlot && availableWeaponSlot.AvailableForInteraction)
+            {
+                isInteractingWithWeapon = !isInteractingWithWeapon;
+                availableWeaponSlot.SetPlayerInteraction(isInteractingWithWeapon);
+            }
+            if (availableInteractableObject)
+            {
+                availableInteractableObject.Activate();
+            }
         }
     }
 
@@ -58,15 +67,17 @@ public class PlayerMovement : MonoBehaviour
         {
             availableWeaponSlot = collider.GetComponent<WeaponSlot>();
         }
+        else if (collider.CompareTag("Interactable"))
+        {
+            availableInteractableObject = collider.GetComponent<InteractableObject>();
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.CompareTag("WeaponSlot"))
-        {
-            availableWeaponSlot = null;
-            isInteractingWithWeapon = false;
-        }
+        availableWeaponSlot = null;
+        isInteractingWithWeapon = false;
+        availableInteractableObject = null;
     }
 
     void Update()
