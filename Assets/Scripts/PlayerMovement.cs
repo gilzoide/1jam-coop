@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             }
             availableWeaponSlot.RotateCrosshair(movePosition.x);
         }
-        else
+        else if (isShooting)
         {
             crosshair.AimDirectional(movePosition.x, movePosition.y);
             repeatedShooter.Shoot(personalWeaponInfo);
