@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyBase : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
     public EnergyHolder energyHolder;
     public SpriteRenderer energyBarSpriteRenterer;
+    public UnityEvent<EnemyInfo> onEnemyDestroyed;
     
     void Awake()
     {
@@ -30,5 +32,6 @@ public class EnemyBase : MonoBehaviour
     public void DestroySelf()
     {
         Destroy(gameObject);
+        onEnemyDestroyed.Invoke(enemyInfo);
     }
 }

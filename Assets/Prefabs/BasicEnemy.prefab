@@ -356,6 +356,21 @@ MonoBehaviour:
   enemyInfo: {fileID: 11400000, guid: f0d1c7888a3cfb6109a7ee15cec87e43, type: 2}
   energyHolder: {fileID: 7325026633499279310}
   energyBarSpriteRenterer: {fileID: 2535217049017474866}
+  onEnemyDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2674df66b295b74d1b4e034781702a81, type: 2}
+        m_TargetAssemblyTypeName: ScoreInfo, Assembly-CSharp
+        m_MethodName: Increment
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3017489780284941153
 MonoBehaviour:
   m_ObjectHideFlags: 0
