@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4782738344956494257}
   - component: {fileID: 4782738344956494271}
   - component: {fileID: 4782738344956494270}
+  - component: {fileID: 8956622847639848131}
   - component: {fileID: 1378150853933089047}
   m_Layer: 5
   m_Name: ScoreText
@@ -80,6 +81,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Score: 0'
+--- !u!114 &8956622847639848131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782738344956494256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e5a404d0df8cc848ee32e8b50243b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 4782738344956494270}
+  format: 'Score: {0}'
 --- !u!114 &1378150853933089047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +107,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12597eb53a0617a289cb7900266bf9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 4782738344956494270}
   scoreInfo: {fileID: 11400000, guid: 2674df66b295b74d1b4e034781702a81, type: 2}
-  format: 'Score: {0}'
+  text: {fileID: 8956622847639848131}

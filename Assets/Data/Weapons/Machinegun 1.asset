@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24b81aaf8356e1773b6de4ae45e656b9, type: 3}
-  m_Name: Machinegun
+  m_Name: Machinegun 1
   m_EditorClassIdentifier: 
   type: 1
-  displayName: Machinegun
+  displayName: Machinegun 1
   sprite: {fileID: 21300000, guid: dc27204d3ebb683c89db4d11f04580ac, type: 3}
   repeatDelay: 0.2
+  damage: 5
+  scoreWorth: 200
   projectilePrefab: {fileID: 462647291000486902, guid: 7512f7e490ae5c00c995bedc3c432832, type: 3}

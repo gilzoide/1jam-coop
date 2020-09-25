@@ -5,35 +5,34 @@ using UnityEngine.UI;
 
 public class ScoreText : MonoBehaviour
 {
-    public Text text;
     public ScoreInfo scoreInfo;
-    public string format = "${0}";
+    public FormattedText text;
 
     void Awake()
     {
         if (!text)
         {
-            text = GetComponentInChildren<Text>();
+            text = GetComponentInChildren<FormattedText>();
         }
     }
 
     void Start()
     {
-        SetScore(scoreInfo.score);
+        UpdateScore(scoreInfo.score);
     }
 
-    public void SetScore(long score)
+    void UpdateScore(long score)
     {
-        text.text = string.Format(format, score);
+        text.SetWith(score);
     }
 
     void OnEnable()
     {
-        scoreInfo.onScoreChanged.AddListener(SetScore);
+        scoreInfo.onScoreChanged.AddListener(UpdateScore);
     }
 
     void OnDisable()
     {
-        scoreInfo.onScoreChanged.RemoveListener(SetScore);
+        scoreInfo.onScoreChanged.RemoveListener(UpdateScore);
     }
 }
