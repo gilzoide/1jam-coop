@@ -45,10 +45,21 @@
                 {
                     "name": "",
                     "id": "a63ac71e-f292-4933-8130-a24a159deaf5",
-                    "path": "<Keyboard>/comma",
+                    "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard Left",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0e5ff57-c6cf-4551-9b53-86fb2a527f8f",
+                    "path": "<Keyboard>/period",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Right",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -70,7 +81,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard Left",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -81,7 +92,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard Left",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -92,7 +103,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard Left",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -103,7 +114,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard Left",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -219,12 +230,67 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "50be2e9a-060f-4452-9882-f4972c350485",
-                    "path": "<Keyboard>/period",
+                    "name": "2D Vector",
+                    "id": "040651c7-02fd-41e0-a95e-8169ee707d6d",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "e7e3ecfe-5b9e-40e6-9055-6b621f056a60",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Right",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "a16c1d19-49ca-4bd2-9d3c-0b854bec1da1",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Right",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "67c4846c-a69f-4a55-b08a-49c30337bf31",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Right",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "5aafb0ae-e3df-40f7-a7da-7b9bbeed9d3d",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Right",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "50be2e9a-060f-4452-9882-f4972c350485",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Left",
                     "action": "Enter/Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -236,6 +302,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Enter/Exit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb14609e-b945-4d5a-85b6-9fc1332993f0",
+                    "path": "<Keyboard>/comma",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Right",
                     "action": "Enter/Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -256,8 +333,19 @@
             ]
         },
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "Keyboard Left",
+            "bindingGroup": "Keyboard Left",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard Right",
+            "bindingGroup": "Keyboard Right",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
