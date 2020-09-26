@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class WeaponShopItem : MonoBehaviour
 {
+    public ScoreInfo playerScoreInfo;
     public WeaponInfo weaponInfo;
     public Image image;
     public Text title;
     public FormattedText damageText;
     public FormattedText delayText;
     public FormattedText priceText;
+    public string buyText = "BUY NOW!";
+    public string cannotBuyText = "No money =/";
 
     void Start()
     {
@@ -23,6 +26,6 @@ public class WeaponShopItem : MonoBehaviour
         title.text = weaponInfo.displayName;
         damageText.SetWith(weaponInfo.damage);
         delayText.SetWith(weaponInfo.repeatDelay);
-        priceText.SetWith(weaponInfo.scoreWorth);
+        priceText.SetWith(playerScoreInfo.score >= weaponInfo.scoreWorth ? buyText : cannotBuyText, weaponInfo.scoreWorth);
     }
 }

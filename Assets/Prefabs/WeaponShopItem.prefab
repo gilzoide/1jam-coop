@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Delay: ...'
+  m_Text: 'Delay: {0}'
 --- !u!114 &6570100015738373676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,12 +185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1f2f5efcc6c5819931dfe49190e9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScoreInfo: {fileID: 11400000, guid: 2674df66b295b74d1b4e034781702a81, type: 2}
   weaponInfo: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
   image: {fileID: 3509988338485458513}
   title: {fileID: 5304089612923329779}
   damageText: {fileID: 7938463741206100726}
   delayText: {fileID: 6570100015738373676}
   priceText: {fileID: 4057927273281157981}
+  buyText: <color=green>BUY NOW!</color>
+  cannotBuyText: <color=red>No money =/</color>
 --- !u!114 &2381812040604464920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +217,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.90717053, g: 0.9339623, b: 0.42292634, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -313,7 +316,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '$...  '
+  m_Text: '{0}  ${1}  '
 --- !u!114 &4057927273281157981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 8397175407611736419}
-  format: '${0}  '
+  format: '{0}  ${1}  '
 --- !u!1 &4732974492198963020
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +410,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Damage: ...'
+  m_Text: 'Damage: {0}'
 --- !u!114 &7938463741206100726
 MonoBehaviour:
   m_ObjectHideFlags: 0
