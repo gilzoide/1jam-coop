@@ -25,9 +25,6 @@ public class InputManager : MonoBehaviour {
                 connectedControls.Add("Keyboard Left");
                 PlayerInput.Instantiate(playerPrefab, controlScheme: "Keyboard Left", pairWithDevice : ctx.control.device);
             }
-            else {
-                return;
-            }
         }
         else if (ctx.control.displayName == ".")
         {
@@ -36,9 +33,6 @@ public class InputManager : MonoBehaviour {
                 connectedControls.Add("Keyboard Right");
                 PlayerInput.Instantiate(playerPrefab, controlScheme: "Keyboard Right", pairWithDevice : ctx.control.device);
             }
-            else {
-                return;
-            }
         }
         else if (ctx.control.name == "buttonWest")
         {
@@ -46,9 +40,6 @@ public class InputManager : MonoBehaviour {
             {
                 connectedControls.Add(ctx.control.device.ToString());
                 PlayerInput.Instantiate(playerPrefab, controlScheme: "Gamepad", pairWithDevice : ctx.control.device);
-            }
-            else {
-                return;
             }
         }
     }
