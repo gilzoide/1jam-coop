@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1799882554786121389}
   - component: {fileID: 1799882554786121388}
   - component: {fileID: 8356283467580319991}
+  - component: {fileID: 2019280399}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -116,3 +117,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3360335393534598672, guid: 021f18a741df843aebecc13fbc5e5025, type: 3}
+--- !u!114 &2019280399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799882554786121391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4702e3a410aad154e97309d7d8b7cf59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  train: {fileID: 0}
+  levels:
+  - {fileID: 4538300889463968215, guid: 48075a71e02b3b343b86355e85a5c9bc, type: 3}
+  - {fileID: 4538300889463968215, guid: 1e9d796b3434a584fb205fb36d56a170, type: 3}
