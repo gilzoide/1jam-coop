@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class WeaponShopItem : MonoBehaviour
+public class WeaponShopItem : MonoBehaviour, ICancelHandler
 {
     public ScoreInfo playerScoreInfo;
     public WeaponInfo weaponInfo;
@@ -33,5 +34,11 @@ public class WeaponShopItem : MonoBehaviour
     public void PurchaseWeapon()
     {
         weaponShop.PurchaseWeaponItem(weaponInfo);
+    }
+
+    public void OnCancel(BaseEventData data)
+    {
+        // Didn't manage to get OnCancel working on WeaponShop, so just reroute it here
+        weaponShop.OnCancel(data);
     }
 }
