@@ -7,6 +7,7 @@ public class WeaponShopItem : MonoBehaviour
 {
     public ScoreInfo playerScoreInfo;
     public WeaponInfo weaponInfo;
+    public WeaponShop weaponShop;
     public Image image;
     public Text title;
     public FormattedText damageText;
@@ -15,7 +16,7 @@ public class WeaponShopItem : MonoBehaviour
     public string buyText = "BUY NOW!";
     public string cannotBuyText = "No money =/";
 
-    void Start()
+    void OnEnable()
     {
         SetWeaponInfo(weaponInfo);
     }
@@ -27,5 +28,10 @@ public class WeaponShopItem : MonoBehaviour
         damageText.SetWith(weaponInfo.damage);
         delayText.SetWith(weaponInfo.repeatDelay);
         priceText.SetWith(playerScoreInfo.score >= weaponInfo.scoreWorth ? buyText : cannotBuyText, weaponInfo.scoreWorth);
+    }
+
+    public void PurchaseWeapon()
+    {
+        weaponShop.PurchaseWeaponItem(weaponInfo);
     }
 }

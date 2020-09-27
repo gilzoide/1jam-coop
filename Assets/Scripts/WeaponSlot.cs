@@ -9,6 +9,7 @@ public class WeaponSlot : MonoBehaviour
     public Sprite emptySlotSprite;
     public Crosshair crosshair;
     public RepeatedShooter repeatedShooter;
+    public GameObject slotSelector;
 
     public bool AvailableForInteraction => weaponType != WeaponInfo.Type.None;
 
