@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1799882554786121389}
   - component: {fileID: 1799882554786121388}
+  - component: {fileID: 8356283467580319991}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_NotificationBehavior: 0
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -102,3 +103,16 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &8356283467580319991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799882554786121391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90f88a979cd0c8439e656f2418f0674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 3360335393534598672, guid: 021f18a741df843aebecc13fbc5e5025, type: 3}
