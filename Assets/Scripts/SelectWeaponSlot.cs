@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SelectWeaponSlot : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class SelectWeaponSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHandler
 {
     public WeaponShop weaponShop;
     public WeaponSlot weaponSlot;
@@ -14,6 +14,12 @@ public class SelectWeaponSlot : MonoBehaviour, ISelectHandler, IDeselectHandler
     public void OnDeselect(BaseEventData data)
     {
         weaponSlot.slotSelector.gameObject.SetActive(false);
+    }
+
+    public void OnCancel(BaseEventData data)
+    {
+        // Didn't manage to get OnCancel working on WeaponShop, so just reroute it here
+        weaponShop.OnCancel(data);
     }
 
     public void SlotChosen()
