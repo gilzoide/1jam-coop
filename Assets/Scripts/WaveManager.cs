@@ -4,12 +4,15 @@ using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
-    public Transform train;
     public WeaponInfo weaponInfo;
-    public UnityEvent endLevel;
     [System.Serializable]
     public class Waves { public GameObject[] enemies; }
     public Waves[] waves;
+
+    [HideInInspector]
+    public Transform train;
+    [HideInInspector]
+    public UnityEvent endLevel;
 
     private int enemies;
     private int wave;
@@ -33,6 +36,7 @@ public class WaveManager : MonoBehaviour
             );
 
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            enemy.transform.localScale = new Vector3(spawnPosition.x / 10, 1, 1);
             enemy.GetComponent<GetNear>().target = train;
             enemy.GetComponent<GetNear>().onNear.AddListener(() => enemy.GetComponentInChildren<Crosshair>().LookAt(train));
             enemy.GetComponent<GetNear>().onNear.AddListener(() => enemy.GetComponent<RepeatedShooter>().Shoot(weaponInfo));

@@ -43,11 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195d4aa1490935c4995b70f38fd09209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  train: {fileID: 0}
   weaponInfo: {fileID: 11400000, guid: 9264bec24f94257b4be039475d17d841, type: 2}
+  train: {fileID: 0}
   endLevel:
     m_PersistentCalls:
       m_Calls: []
   waves:
   - enemies:
     - {fileID: 4893058290036456185, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
+    - {fileID: 2552511734797120986, guid: a4819962ad789034c9e2245612fad6b1, type: 3}
+  - enemies:
+    - {fileID: 2552511734797120986, guid: 7170a9f15a4db284b86d149367cf62d9, type: 3}
+    - {fileID: 2552511734797120986, guid: b9a83dc5d3b0db346af99592a7388537, type: 3}

@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: c750058e7dbc1274d9bd0a26b1b0be63
+guid: 292fae3f732895645b40c1e7eac781e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 590284449145359832
-    second: char4_move_0
+      213: -3658590854482935073
+    second: zoio_bazuca_0
   - first:
-      213: 2353467046414855482
-    second: char4_move_1
+      213: -5370728103707898437
+    second: zoio_bazuca_1
   - first:
-      213: -8892751004655571464
-    second: char4_move_2
+      213: -407920217516903797
+    second: zoio_bazuca_2
   - first:
-      213: -5659375950695092136
-    second: char4_move_3
+      213: -3211839001860056615
+    second: zoio_bazuca_3
   - first:
-      213: 1681172876307667558
-    second: char4_move_4
+      213: -445627672887678221
+    second: zoio_bazuca_4
   - first:
-      213: -8300805743956465172
-    second: char4_move_5
+      213: 8705465921576375991
+    second: zoio_bazuca_5
   - first:
-      213: 2094876322119080420
-    second: char4_move_6
-  - first:
-      213: 3592409897796475153
-    second: char4_move_7
+      213: -3039982599955082356
+    second: zoio_bazuca_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char4_move_0
+      name: zoio_bazuca_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
-        height: 32
+        y: 153
+        width: 70
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dd0fbb349c113800800000000000000
-      internalID: 590284449145359832
+      spriteID: fd24d0c70031a3dc0800000000000000
+      internalID: -3658590854482935073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char4_move_1
+      name: zoio_bazuca_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
+        x: 70
+        y: 153
+        width: 70
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,41 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3d252c3fc139a020800000000000000
-      internalID: 2353467046414855482
+      spriteID: bbd8849be375775b0800000000000000
+      internalID: -5370728103707898437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char4_move_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fda18bb31a969480800000000000000
-      internalID: -8892751004655571464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char4_move_3
+      name: zoio_bazuca_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 102
+        width: 70
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8503e68be8bd571b0800000000000000
-      internalID: -5659375950695092136
+      spriteID: b82743239b6c65af0800000000000000
+      internalID: -407920217516903797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char4_move_4
+      name: zoio_bazuca_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 70
+        y: 102
+        width: 70
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66a1752e2d9b45710800000000000000
-      internalID: 1681172876307667558
+      spriteID: 9d9d262e1714d63d0800000000000000
+      internalID: -3211839001860056615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char4_move_5
+      name: zoio_bazuca_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
+        x: 0
+        y: 51
+        width: 70
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +220,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce9e3f9c72d9dcc80800000000000000
-      internalID: -8300805743956465172
+      spriteID: 3fa22771effc0d9f0800000000000000
+      internalID: -445627672887678221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char4_move_6
+      name: zoio_bazuca_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 51
+        width: 70
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b614d3d12700d870800000000000000
+      internalID: 8705465921576375991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zoio_bazuca_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 70
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,29 +262,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e9d8447aee721d10800000000000000
-      internalID: 2094876322119080420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char4_move_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11991c5c4cdcad130800000000000000
-      internalID: 3592409897796475153
+      spriteID: c831f4e8eefcfc5d0800000000000000
+      internalID: -3039982599955082356
       vertices: []
       indices: 
       edges: []
