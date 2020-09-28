@@ -9,6 +9,7 @@ public class WeaponShopItem : MonoBehaviour, ICancelHandler
     public ScoreInfo playerScoreInfo;
     public WeaponInfo weaponInfo;
     public WeaponShop weaponShop;
+    public Button button;
     public Image image;
     public Text title;
     public FormattedText damageText;
@@ -28,7 +29,9 @@ public class WeaponShopItem : MonoBehaviour, ICancelHandler
         title.text = weaponInfo.displayName;
         damageText.SetWith(weaponInfo.damage);
         delayText.SetWith(weaponInfo.repeatDelay);
-        priceText.SetWith(playerScoreInfo.score >= weaponInfo.scoreWorth ? buyText : cannotBuyText, weaponInfo.scoreWorth);
+        bool canBuy = playerScoreInfo.CanBuyWeapon(weaponInfo);
+        priceText.SetWith(canBuy ? buyText : cannotBuyText, weaponInfo.scoreWorth);
+        button.interactable = canBuy;
     }
 
     public void PurchaseWeapon()

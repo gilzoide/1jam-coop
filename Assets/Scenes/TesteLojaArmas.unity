@@ -1000,6 +1000,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 1799882554786121391, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
 --- !u!114 &2019280398 stripped
@@ -1726,6 +1730,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4405522858604277840, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4409839022982170061, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
       propertyPath: weaponSlotSelectSprite
       value: 
@@ -2008,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7896425936566265994, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000110654044
+      value: 0.000081720165
       objectReference: {fileID: 0}
     - target: {fileID: 8027142757245779842, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
       propertyPath: weaponSlotSelectSprite

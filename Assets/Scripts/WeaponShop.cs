@@ -13,7 +13,6 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
     public UnityEvent onEnabled;
     public UnityEvent onDisabled;
 
-
     private WeaponInfo weaponBeingPurchased;
 
     void Awake()
@@ -30,7 +29,7 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
 
     public void PurchaseWeaponItem(WeaponInfo weaponInfo)
     {
-        if (playerScoreInfo.score >= weaponInfo.scoreWorth)
+        if (playerScoreInfo.CanBuyWeapon(weaponInfo))
         {
             weaponBeingPurchased = weaponInfo;
             ShowSelectSlot();
@@ -44,7 +43,7 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
 
     public void FinishPurchaseWeapon(WeaponSlot weaponSlot)
     {
-        Debug.Assert(playerScoreInfo.score >= weaponBeingPurchased.scoreWorth);
+        Debug.Assert(playerScoreInfo.CanBuyWeapon(weaponBeingPurchased));
         playerScoreInfo.Decrement(weaponBeingPurchased.scoreWorth);
         weaponSlot.SetWeapon(weaponBeingPurchased);
         weaponBeingPurchased = null;
@@ -66,6 +65,11 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
     }
 
     public void OnCancel(BaseEventData data)
+    {
+        CancelCurrentAction();
+    }
+
+    public void CancelCurrentAction()
     {
         if (weaponBeingPurchased == null)
         {

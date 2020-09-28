@@ -29,4 +29,9 @@ public class ScoreInfo : ScriptableObject
         score -= quantity;
         onScoreChanged.Invoke(score);
     }
+
+    public bool CanBuyWeapon(WeaponInfo weaponInfo)
+    {
+        return score >= weaponInfo.scoreWorth;
+    }
 }
