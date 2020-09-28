@@ -1,23 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "ScoreInfo", menuName = "ScriptableObjects/ScoreInfo")]
 public class ScoreInfo : ScriptableObject
 {
     public long score = 0;
+    public long currency = 0;
     public UnityEvent<long> onScoreChanged;
+    public UnityEvent<long> onCurrencyChanged;
 
     public void Reset()
     {
+        currency = 0;
         score = 0;
     }
 
     public void Increment(long quantity)
     {
         score += quantity;
+        currency += quantity;
         onScoreChanged.Invoke(score);
+        onCurrencyChanged.Invoke(currency);
     }
     public void Increment(EnemyInfo enemyInfo)
     {
@@ -26,12 +29,12 @@ public class ScoreInfo : ScriptableObject
 
     public void Decrement(int quantity)
     {
-        score -= quantity;
-        onScoreChanged.Invoke(score);
+        currency -= quantity;
+        onCurrencyChanged.Invoke(currency);
     }
 
     public bool CanBuyWeapon(WeaponInfo weaponInfo)
     {
-        return score >= weaponInfo.scoreWorth;
+        return currency >= weaponInfo.scoreWorth;
     }
 }
