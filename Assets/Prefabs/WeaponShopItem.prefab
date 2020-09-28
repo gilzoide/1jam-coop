@@ -188,6 +188,7 @@ MonoBehaviour:
   playerScoreInfo: {fileID: 11400000, guid: 2674df66b295b74d1b4e034781702a81, type: 2}
   weaponInfo: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
   weaponShop: {fileID: 0}
+  button: {fileID: 2381812040604464920}
   image: {fileID: 3509988338485458513}
   title: {fileID: 5304089612923329779}
   damageText: {fileID: 7938463741206100726}

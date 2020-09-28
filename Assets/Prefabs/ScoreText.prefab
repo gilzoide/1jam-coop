@@ -80,7 +80,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: $ 0
 --- !u!114 &8956622847639848131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 4782738344956494270}
-  format: 'Score: {0}'
+  format: $ {0}
 --- !u!114 &1378150853933089047
 MonoBehaviour:
   m_ObjectHideFlags: 0
