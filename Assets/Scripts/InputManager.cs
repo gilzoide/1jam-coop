@@ -2,8 +2,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour {
-    public GameObject playerPrefab;
+public class InputManager : MonoBehaviour
+{
+    public GameObject[] playerPrefabs;
 
     PlayerControls control;
     List<string> connectedControls = new List<string>();
@@ -16,32 +17,39 @@ public class InputManager : MonoBehaviour {
 
     public void GetInput(InputAction.CallbackContext ctx)
     {
-        if (connectedControls.Count == 4) return;
+        if (connectedControls.Count >= 4) return;
 
         if (ctx.control.displayName == "V")
         {
             if (connectedControls.Find(e => e == "Keyboard Left") == null)
             {
-                connectedControls.Add("Keyboard Left");
-                PlayerInput.Instantiate(playerPrefab, controlScheme: "Keyboard Left", pairWithDevice : ctx.control.device);
+                AddPlayer("Keyboard Left", "Keyboard Left", ctx.control.device);
             }
         }
         else if (ctx.control.displayName == ".")
         {
             if (connectedControls.Find(e => e == "Keyboard Right") == null)
             {
-                connectedControls.Add("Keyboard Right");
-                PlayerInput.Instantiate(playerPrefab, controlScheme: "Keyboard Right", pairWithDevice : ctx.control.device);
+                AddPlayer("Keyboard Right", "Keyboard Right", ctx.control.device);
             }
         }
         else if (ctx.control.name == "buttonWest")
         {
             if (connectedControls.Find(e => e == ctx.control.device.ToString()) == null)
             {
-                connectedControls.Add(ctx.control.device.ToString());
-                PlayerInput.Instantiate(playerPrefab, controlScheme: "Gamepad", pairWithDevice : ctx.control.device);
+                AddPlayer(ctx.control.device.ToString(), "Gamepad", ctx.control.device);
             }
         }
+    }
+
+    void AddPlayer(string deviceAlias, string controlScheme, InputDevice device)
+    {
+        connectedControls.Add(deviceAlias);
+        PlayerInput.Instantiate(
+            playerPrefabs[connectedControls.Count - 1],
+            controlScheme: controlScheme,
+            pairWithDevice: device
+        );
     }
 
     void OnEnable()

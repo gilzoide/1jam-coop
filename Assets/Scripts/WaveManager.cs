@@ -33,9 +33,8 @@ public class WaveManager : MonoBehaviour
             );
 
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            GameObject crosshair = enemy.transform.Find("Crosshair").gameObject;
             enemy.GetComponent<GetNear>().target = train;
-            enemy.GetComponent<GetNear>().onNear.AddListener(() => crosshair.GetComponent<Crosshair>().LookAt(train));
+            enemy.GetComponent<GetNear>().onNear.AddListener(() => enemy.GetComponentInChildren<Crosshair>().LookAt(train));
             enemy.GetComponent<GetNear>().onNear.AddListener(() => enemy.GetComponent<RepeatedShooter>().Shoot(weaponInfo));
             enemy.GetComponent<EnergyHolder>().onEnergyEmpty.AddListener(EnemyDied);
         }

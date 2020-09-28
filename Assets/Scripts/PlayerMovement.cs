@@ -9,8 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public Crosshair crosshair;
     public RepeatedShooter repeatedShooter;
 
-    private WeaponSlot availableWeaponSlot;
     private InteractableObject availableInteractableObject;
+    private WeaponSlot availableWeaponSlot;
+    private SpriteRenderer sprite;
+    private Animator animator;
     private Vector2 movePosition;
     private bool isInteractingWithWeapon = false;
     private bool isShooting;
@@ -32,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         {
             repeatedShooter = GetComponentInChildren<RepeatedShooter>();
         }
+        animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public void Shoot(InputAction.CallbackContext ctx)
@@ -112,6 +116,14 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidBody.velocity = isInteractingWithWeapon ? Vector2.zero : (movePosition * speed);
+        if (!isInteractingWithWeapon)
+        {
+            if (movePosition.x != 0)
+            {
+                sprite.flipX = movePosition.x > 0;
+            }
+            animator.SetBool("walking", movePosition != Vector2.zero);
+            rigidBody.velocity = movePosition * speed;
+        }
     }
 }
