@@ -147,7 +147,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 748179195
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 77026f29153fbd90b86ac5a6b4a47f99, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 170597766586569660}
         m_TargetAssemblyTypeName: EnemyBase, Assembly-CSharp
-        m_MethodName: DestroySelf
+        m_MethodName: StartDestroyingSelf
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -376,6 +376,8 @@ MonoBehaviour:
   enemyInfo: {fileID: 11400000, guid: f0d1c7888a3cfb6109a7ee15cec87e43, type: 2}
   energyHolder: {fileID: 7325026633499279310}
   energyBarSpriteRenterer: {fileID: 2535217049017474866}
+  animator: {fileID: 5371636986534915875}
+  enemyCollider: {fileID: 3329899724127231278}
   onEnemyDestroyed:
     m_PersistentCalls:
       m_Calls:

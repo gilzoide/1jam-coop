@@ -6,6 +6,8 @@ public class EnemyBase : MonoBehaviour
     public EnemyInfo enemyInfo;
     public EnergyHolder energyHolder;
     public SpriteRenderer energyBarSpriteRenterer;
+    public Animator animator;
+    public Collider2D enemyCollider;
     public UnityEvent<EnemyInfo> onEnemyDestroyed;
     
     void Awake()
@@ -18,6 +20,10 @@ public class EnemyBase : MonoBehaviour
         {
             energyBarSpriteRenterer = GetComponentInChildren<SpriteRenderer>();
         }
+        if (!animator)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
     }
 
     public void ResizeEnergyBar(float normalizedValue)
@@ -27,9 +33,15 @@ public class EnemyBase : MonoBehaviour
         energyBarSpriteRenterer.size = size;
     }
 
+    public void StartDestroyingSelf()
+    {
+        enemyCollider.enabled = false;
+        animator.SetBool("died", true);
+        onEnemyDestroyed.Invoke(enemyInfo);
+    }
+
     public void DestroySelf()
     {
         Destroy(gameObject);
-        onEnemyDestroyed.Invoke(enemyInfo);
     }
 }
