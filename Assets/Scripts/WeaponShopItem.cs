@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class WeaponShopItem : MonoBehaviour, ICancelHandler
+public class WeaponShopItem : MonoBehaviour, ISelectHandler, ICancelHandler
 {
     public ScoreInfo playerScoreInfo;
     public WeaponInfo weaponInfo;
@@ -37,6 +37,11 @@ public class WeaponShopItem : MonoBehaviour, ICancelHandler
     public void PurchaseWeapon()
     {
         weaponShop.PurchaseWeaponItem(weaponInfo);
+    }
+
+    public void OnSelect(BaseEventData data)
+    {
+        weaponShop.ItemSelected(this);
     }
 
     public void OnCancel(BaseEventData data)

@@ -16,3 +16,6 @@ MonoBehaviour:
   onScoreChanged:
     m_PersistentCalls:
       m_Calls: []
+  onCurrencyChanged:
+    m_PersistentCalls:
+      m_Calls: []

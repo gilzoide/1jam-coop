@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,38 +8,76 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
 {
     public ScoreInfo playerScoreInfo;
     public GameObject weaponsView;
+    public RectTransform weaponsViewToInsertItems;
+    public ScrollRect scrollRect;
     public GameObject slotSelectionView;
-    public WeaponShopItem[] shopItems;
-    public SelectWeaponSlot[] slotSelectionItems;
+    public Button closeButton;
+    public WeaponShopItem weaponShopItemPrefab;
+    public SelectWeaponSlot selectWeaponSlotPrefab;
+    public GameObject train;
+    public WeaponInfo[] weaponInfoToBeSold;
     public UnityEvent onEnabled;
     public UnityEvent onDisabled;
 
+    private WeaponShopItem[] shopItems;
+    private SelectWeaponSlot[] slotSelectionItems;
     private WeaponInfo weaponBeingPurchased;
+    private float scrollHeight;
 
     void Awake()
     {
-        if (shopItems == null || shopItems.Length == 0)
+        if (train == null)
         {
-            shopItems = GetComponentsInChildren<WeaponShopItem>(true);
+            train = GameObject.FindGameObjectWithTag("Train");
         }
-        if (slotSelectionItems == null || slotSelectionItems.Length == 0)
+
+        var weaponSlots = train.GetComponentsInChildren<WeaponSlot>(false);
+        slotSelectionItems = Array.ConvertAll(weaponSlots, slot => {
+            var newSelectionItem = Instantiate(selectWeaponSlotPrefab, slotSelectionView.transform);
+            var rectTransform = newSelectionItem.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = slot.transform.position * rectTransform.rect.size;
+            newSelectionItem.weaponShop = this;
+            newSelectionItem.weaponSlot = slot;
+            return newSelectionItem;
+        });
+
+        shopItems = Array.ConvertAll(weaponInfoToBeSold, weaponInfo => {
+            var newShopItem = Instantiate(weaponShopItemPrefab, weaponsViewToInsertItems);
+            newShopItem.weaponShop = this;
+            newShopItem.SetWeaponInfo(weaponInfo);
+            return newShopItem;
+        });
+    }
+
+    public void ItemSelected(WeaponShopItem shopItem)
+    {
+        var itemRectTransform = shopItem.GetComponent<RectTransform>();
+        var viewportHeight = scrollRect.viewport.rect.height;
+        var contentHeight = weaponsViewToInsertItems.rect.height;
+        var centerY = Mathf.Abs(itemRectTransform.anchoredPosition.y);
+
+        float verticalNormalizedPosition;
+        if (centerY < viewportHeight * 0.5f)
         {
-            slotSelectionItems = GetComponentsInChildren<SelectWeaponSlot>(true);
+            verticalNormalizedPosition = 1f;
         }
+        else if (centerY > contentHeight - itemRectTransform.rect.height)
+        {
+            verticalNormalizedPosition = 0f;
+        }
+        else
+        {
+            verticalNormalizedPosition = 1f - (centerY / contentHeight);
+        }
+
+        scrollRect.verticalNormalizedPosition = verticalNormalizedPosition;
     }
 
     public void PurchaseWeaponItem(WeaponInfo weaponInfo)
     {
-        if (playerScoreInfo.CanBuyWeapon(weaponInfo))
-        {
-            weaponBeingPurchased = weaponInfo;
-            ShowSelectSlot();
-        }
-        else
-        {
-            // TODO: feedback de falta dinheiro
-            Debug.LogError("TODO: feedback de falta dinheiro");
-        }
+        Debug.Assert(playerScoreInfo.CanBuyWeapon(weaponInfo));
+        weaponBeingPurchased = weaponInfo;
+        ShowSelectSlot();
     }
 
     public void FinishPurchaseWeapon(WeaponSlot weaponSlot)
@@ -54,7 +93,17 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
     {
         weaponsView.SetActive(true);
         slotSelectionView.SetActive(false);
-        shopItems[0].GetComponent<Button>().Select();
+        Button interactableButton = null;
+        foreach (var shopItem in shopItems)
+        {
+            if (shopItem.button.interactable)
+            {
+                interactableButton = shopItem.button;
+                break;
+            }
+        }
+        interactableButton = interactableButton ?? closeButton;
+        interactableButton.Select();
     }
 
     void ShowSelectSlot()
@@ -92,12 +141,5 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
     {
         weaponBeingPurchased = null;
         onDisabled.Invoke();
-    }
-
-    [ContextMenu("FindAllItems")]
-    void FindAllItems()
-    {
-        shopItems = GetComponentsInChildren<WeaponShopItem>(true);
-        slotSelectionItems = GetComponentsInChildren<SelectWeaponSlot>(true);
     }
 }
