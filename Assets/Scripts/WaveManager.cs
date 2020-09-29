@@ -36,11 +36,10 @@ public class WaveManager : MonoBehaviour
             );
 
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            enemy.transform.localScale = new Vector3(spawnPosition.x / 10, 1, 1);
-            enemy.GetComponent<GetNear>().target = train;
-            enemy.GetComponent<GetNear>().onNear.AddListener(() => enemy.GetComponentInChildren<Crosshair>().LookAt(train));
-            enemy.GetComponent<GetNear>().onNear.AddListener(() => enemy.GetComponent<RepeatedShooter>().Shoot(weaponInfo));
-            enemy.GetComponent<EnergyHolder>().onEnergyEmpty.AddListener(EnemyDied);
+            var enemyBase = enemy.GetComponent<EnemyBase>();
+            enemyBase.transform.localScale = new Vector3(spawnPosition.x / 10, 1, 1);
+            enemyBase.SetupWithTrain(train);
+            enemyBase.energyHolder.onEnergyEmpty.AddListener(EnemyDied);
         }
     }
 

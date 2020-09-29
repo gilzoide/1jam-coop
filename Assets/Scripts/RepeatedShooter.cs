@@ -4,6 +4,7 @@ public class RepeatedShooter : MonoBehaviour
 {
     public Transform projectileSpawnPoint;
     public Faction faction;
+    public WeaponInfo defaultWeaponInfo;
 
     private float lastShotTime = 0f;
 
@@ -13,6 +14,11 @@ public class RepeatedShooter : MonoBehaviour
         {
             faction = GetComponentInParent<Faction>();
         }
+    }
+
+    public void Shoot()
+    {
+        Shoot(defaultWeaponInfo);
     }
 
     public void Shoot(WeaponInfo weaponInfo)

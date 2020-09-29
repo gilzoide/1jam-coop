@@ -9,6 +9,11 @@ public class GetNear : MonoBehaviour
 
     public UnityEvent onNear;
 
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
+
     void Update()
     {
         var distance = Vector3.Distance(target.position, transform.position);

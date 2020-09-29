@@ -9,6 +9,7 @@ public class EnemyBase : MonoBehaviour
     public Animator animator;
     public Collider2D enemyCollider;
     public UnityEvent<EnemyInfo> onEnemyDestroyed;
+    public UnityEvent<Transform> onSetupWithTrain;
     
     void Awake()
     {
@@ -24,6 +25,11 @@ public class EnemyBase : MonoBehaviour
         {
             animator = GetComponentInChildren<Animator>();
         }
+    }
+
+    public void SetupWithTrain(Transform train)
+    {
+        onSetupWithTrain.Invoke(train);
     }
 
     public void ResizeEnergyBar(float normalizedValue)
