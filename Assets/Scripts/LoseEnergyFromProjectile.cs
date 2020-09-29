@@ -25,7 +25,10 @@ public class LoseEnergyFromProjectile : MonoBehaviour
             if (projectile.faction.HostileTo(this.faction))
             {
                 energyHolder.Decrement(projectile.weaponInfo.damage);
-                Destroy(projectile.gameObject);
+                if (projectile.destroyOnContact)
+                {
+                    Destroy(projectile.gameObject);
+                }
             }
         }
     }

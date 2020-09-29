@@ -9,6 +9,7 @@ public class WeaponInfo : ScriptableObject
     {
         None,
         Machinegun,
+        Grenade,
     }
 
     public WeaponInfo.Type type;

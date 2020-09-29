@@ -170,3 +170,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponInfo: {fileID: 0}
   faction: {fileID: 0}
+  destroyOnContact: 1
