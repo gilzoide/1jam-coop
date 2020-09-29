@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e351b467d1822b672ad865edfc76c067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeaponInfo: {fileID: 0}
+  currentWeaponInfo: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
   spriteRenderer: {fileID: 6112491101754873427}
   emptySlotSprite: {fileID: 21300000, guid: 77026f29153fbd90b86ac5a6b4a47f99, type: 3}
   crosshair: {fileID: 5280523442839278841}

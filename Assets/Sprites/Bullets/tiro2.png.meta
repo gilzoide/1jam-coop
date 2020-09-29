@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: ff21635d34f9f9f44b487747126ba8f3
+guid: 03dd4b02d557c994b81975660385a7ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5251278629714803311
-    second: oiozinho_0
+      213: -7531286859611902536
+    second: tiro2_0
   - first:
-      213: 1468709885316300617
-    second: oiozinho_1
+      213: -6701140622711421895
+    second: tiro2_1
   - first:
-      213: 7320105773611768885
-    second: oiozinho_2
+      213: -9160198431579473549
+    second: tiro2_2
   - first:
-      213: 4370716808242667530
-    second: oiozinho_3
+      213: 3375814970260786438
+    second: tiro2_3
   - first:
-      213: -5922941651097501011
-    second: oiozinho_4
+      213: -707003974025254463
+    second: tiro2_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: oiozinho_0
+      name: tiro2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 52
-        width: 36
-        height: 26
+        y: 12
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6a30cc571a40e840800000000000000
-      internalID: 5251278629714803311
+      spriteID: 8bde34fe08e7b7790800000000000000
+      internalID: -7531286859611902536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oiozinho_1
+      name: tiro2_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 52
-        width: 36
-        height: 26
+        x: 6
+        y: 12
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94ff160fbd7e16410800000000000000
-      internalID: 1468709885316300617
+      spriteID: 93488599b14c003a0800000000000000
+      internalID: -6701140622711421895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oiozinho_2
+      name: tiro2_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 26
-        width: 36
-        height: 26
+        y: 6
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53c5a62ea6d369560800000000000000
-      internalID: 7320105773611768885
+      spriteID: 3797d9d2f0070e080800000000000000
+      internalID: -9160198431579473549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oiozinho_3
+      name: tiro2_3
       rect:
         serializedVersion: 2
-        x: 36
-        y: 26
-        width: 36
-        height: 26
+        x: 6
+        y: 6
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a002221b7c7e7ac30800000000000000
-      internalID: 4370716808242667530
+      spriteID: 60d07d164dd49de20800000000000000
+      internalID: 3375814970260786438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oiozinho_4
+      name: tiro2_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 36
-        height: 26
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da2c7fc03fb7dcda0800000000000000
-      internalID: -5922941651097501011
+      spriteID: 1c96f69a1a73036f0800000000000000
+      internalID: -707003974025254463
       vertices: []
       indices: 
       edges: []
