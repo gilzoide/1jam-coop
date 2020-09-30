@@ -57,7 +57,7 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
         var centerY = Mathf.Abs(itemRectTransform.anchoredPosition.y);
 
         float verticalNormalizedPosition;
-        if (centerY < viewportHeight * 0.5f)
+        if (centerY < viewportHeight * 0.51f)
         {
             verticalNormalizedPosition = 1f;
         }

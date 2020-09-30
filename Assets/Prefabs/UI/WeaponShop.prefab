@@ -142,7 +142,7 @@ MonoBehaviour:
       - m_Target: {fileID: 3510462581739709878}
         m_TargetAssemblyTypeName: FadeAlpha, Assembly-CSharp
         m_MethodName: FadeIn
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -153,19 +153,7 @@ MonoBehaviour:
         m_CallState: 2
   onDisabled:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 466798472940221243}
-        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-        m_MethodName: set_alpha
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &2022670117499457813
 GameObject:
   m_ObjectHideFlags: 0

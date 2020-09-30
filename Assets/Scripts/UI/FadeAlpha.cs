@@ -16,6 +16,11 @@ public class FadeAlpha : MonoBehaviour
         }
     }
 
+    public void FadeIn(float fromAlpha)
+    {
+        canvasGroup.alpha = fromAlpha;
+        StartCoroutine(FadeToInSeconds(1f, fadeDuration));
+    }
     public void FadeIn()
     {
         StartCoroutine(FadeToInSeconds(1f, fadeDuration));
