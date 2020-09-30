@@ -25,6 +25,7 @@ public class WeaponShopItem : MonoBehaviour, ISelectHandler, ICancelHandler
 
     public void SetWeaponInfo(WeaponInfo weaponInfo)
     {
+        this.weaponInfo = weaponInfo;
         image.sprite = weaponInfo.sprite;
         title.text = weaponInfo.displayName;
         damageText.SetWith(weaponInfo.damage);
@@ -36,17 +37,17 @@ public class WeaponShopItem : MonoBehaviour, ISelectHandler, ICancelHandler
 
     public void PurchaseWeapon()
     {
-        weaponShop.PurchaseWeaponItem(weaponInfo);
+        weaponShop?.PurchaseWeaponItem(weaponInfo);
     }
 
     public void OnSelect(BaseEventData data)
     {
-        weaponShop.ItemSelected(this);
+        weaponShop?.ItemSelected(this);
     }
 
     public void OnCancel(BaseEventData data)
     {
         // Didn't manage to get OnCancel working on WeaponShop, so just reroute it here
-        weaponShop.OnCancel(data);
+        weaponShop?.OnCancel(data);
     }
 }
