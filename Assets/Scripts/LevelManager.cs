@@ -1,30 +1,48 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LevelManager : MonoBehaviour
 {
     public Transform train;
+    public GameObject shop;
     public GameObject[] levels;
 
     private int currentLevel;
+    private List<PlayerInput> players = new List<PlayerInput>();
 
     void Awake()
     {
         NextLevel();
     }
 
-    void NextLevel()
+    public void NextLevel()
     {
         GameObject level = Instantiate(levels[currentLevel]);
         level.GetComponent<WaveManager>().train = train;
-        level.GetComponent<WaveManager>().endLevel.AddListener(EndLevel);
+        level.GetComponent<WaveManager>().endLevel.AddListener(OpenShop);
+        SetActivePlayers(true);
     }
 
-    void EndLevel()
+    void OpenShop()
     {
-        if (currentLevel < levels.Length - 1)
+        if (currentLevel >= levels.Length - 1) return;
+
+        SetActivePlayers(false);
+        shop.SetActive(true);
+        currentLevel++;
+    }
+
+    void SetActivePlayers(bool active)
+    {
+        foreach (var player in players)
         {
-            currentLevel++;
-            NextLevel();
+            player.enabled = active;
         }
+    }
+
+    void OnPlayerJoined(PlayerInput player)
+    {
+        players.Add(player);
     }
 }
