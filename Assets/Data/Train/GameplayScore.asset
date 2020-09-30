@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890ff8bd1c9fd55e3a0a8de8995fce0b, type: 3}
   m_Name: GameplayScore
   m_EditorClassIdentifier: 
-  score: 300
+  score: 0
+  currency: 0
   onScoreChanged:
     m_PersistentCalls:
       m_Calls: []
