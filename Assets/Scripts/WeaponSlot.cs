@@ -4,10 +4,10 @@ public class WeaponSlot : MonoBehaviour
 {
     public WeaponInfo currentWeaponInfo;
     public SpriteRenderer spriteRenderer;
-    public Sprite emptySlotSprite;
     public Crosshair crosshair;
     public RepeatedShooter repeatedShooter;
     public GameObject slotSelector;
+    public GameObject aimObject;
 
     public bool AvailableForInteraction => weaponType != WeaponInfo.Type.None;
 
@@ -40,13 +40,13 @@ public class WeaponSlot : MonoBehaviour
     {
         currentWeaponInfo = weaponInfo;
         weaponType = weaponInfo?.type ?? WeaponInfo.Type.None;
-        spriteRenderer.sprite = weaponInfo?.sprite ?? emptySlotSprite;
+        spriteRenderer.sprite = weaponInfo?.sprite;
     }
 
     public void SetPlayerInteraction(bool playerInteracting)
     {
         havePlayerInteracting = playerInteracting;
-        crosshair.gameObject.SetActive(playerInteracting);
+        aimObject.gameObject.SetActive(playerInteracting);
     }
 
     public void Fire()

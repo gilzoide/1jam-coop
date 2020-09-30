@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   displayName: Machinegun 1
-  sprite: {fileID: 21300000, guid: dc27204d3ebb683c89db4d11f04580ac, type: 3}
+  sprite: {fileID: 1098179606456428539, guid: 0c2d8e897423b0e4fa47506ae9ecfb4e, type: 3}
   repeatDelay: 0.2
   damage: 5
   scoreWorth: 200
