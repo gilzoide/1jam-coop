@@ -45,6 +45,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6132810570221484724}
   - component: {fileID: 6002208014246790187}
+  - component: {fileID: 466798472940221243}
+  - component: {fileID: 3510462581739709878}
   - component: {fileID: 2964382130218008145}
   m_Layer: 5
   m_Name: WeaponShop
@@ -83,6 +85,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325919106461665971}
   m_CullTransparentMesh: 0
+--- !u!225 &466798472940221243
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325919106461665971}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &3510462581739709878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325919106461665971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f728f616d19b8f793a41c99db2e7cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 466798472940221243}
+  fadeDuration: 0.5
 --- !u!114 &2964382130218008145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,12 +135,37 @@ MonoBehaviour:
   weaponInfoToBeSold:
   - {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
   - {fileID: 11400000, guid: fa33731424645b1caae651a3a6f59b03, type: 2}
+  - {fileID: 11400000, guid: 110de04eef144c759b34157a2a233961, type: 2}
   onEnabled:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3510462581739709878}
+        m_TargetAssemblyTypeName: FadeAlpha, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDisabled:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 466798472940221243}
+        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+        m_MethodName: set_alpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2022670117499457813
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +285,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1627094264998564970}
   m_HandleRect: {fileID: 5622309852231767289}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

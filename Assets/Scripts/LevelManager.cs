@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class LevelManager : MonoBehaviour
 {
     public Transform train;
-    public GameObject shop;
+    public WeaponShop shop;
     public GameObject[] levels;
 
     private int currentLevel;
@@ -13,6 +13,10 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
+        if (!shop)
+        {
+            shop = GameObject.FindObjectOfType<WeaponShop>();
+        }
         NextLevel();
     }
 
@@ -29,7 +33,7 @@ public class LevelManager : MonoBehaviour
         if (currentLevel >= levels.Length - 1) return;
 
         SetActivePlayers(false);
-        shop.SetActive(true);
+        shop.gameObject.SetActive(true);
         currentLevel++;
     }
 
