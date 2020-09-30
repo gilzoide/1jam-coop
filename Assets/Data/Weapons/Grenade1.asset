@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   displayName: Grenade 1
-  sprite: {fileID: 21300000, guid: dd74974b1ab4e3009b21555a77a88eab, type: 3}
+  sprite: {fileID: -5557420877203330147, guid: 0c2d8e897423b0e4fa47506ae9ecfb4e, type: 3}
   repeatDelay: 1
   damage: 20
   scoreWorth: 0

@@ -4,24 +4,23 @@ public class Crosshair : MonoBehaviour
 {
     public float minAngle = 0;
     public float maxAngle = 0;
-    public float initialAngle;
     public float angularSpeed = 30f;
+    public bool flipX = false;
 
     private float angle;
 
     void Awake()
     {
-        angle = initialAngle;
-        transform.eulerAngles = new Vector3(0, 0, angle);
+        angle = Mathf.Clamp(transform.eulerAngles.z, minAngle, maxAngle);
     }
 
     public void Rotate(float horizontalAxis)
     {
         if (Mathf.Abs(horizontalAxis) > 0.01)
         {
-            angle -= horizontalAxis * angularSpeed * Time.deltaTime;
+            angle -= (flipX ? -1f : 1f) * horizontalAxis * angularSpeed * Time.deltaTime;
             angle = Mathf.Clamp(angle, minAngle, maxAngle);
-            transform.eulerAngles = new Vector3(0, 0, angle);
+            transform.localEulerAngles = new Vector3(0, 0, angle);
         }
     }
 

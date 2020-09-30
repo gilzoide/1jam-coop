@@ -4,16 +4,16 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 1098179606456428539
-    second: weapons_0
+    second: weapons_Machinegun
   - first:
       213: -5557420877203330147
-    second: weapons_1
+    second: weapons_Grenade
   - first:
       213: -7888296697152109952
-    second: weapons_2
+    second: weapons_Laser
   - first:
       213: 698664279297640794
-    second: weapons_3
+    second: weapons_Shotgun
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,15 +113,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weapons_0
+      name: weapons_Machinegun
       rect:
         serializedVersion: 2
         x: 0
         y: 108
         width: 61
         height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.30583352, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,15 +134,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapons_1
+      name: weapons_Grenade
       rect:
         serializedVersion: 2
         x: 0
         y: 72
         width: 61
         height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.30583352, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,15 +155,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapons_2
+      name: weapons_Laser
       rect:
         serializedVersion: 2
         x: 0
         y: 36
         width: 61
         height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.30583352, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,15 +176,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapons_3
+      name: weapons_Shotgun
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 61
         height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.30583352, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
