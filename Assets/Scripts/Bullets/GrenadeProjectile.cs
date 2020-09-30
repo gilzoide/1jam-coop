@@ -41,7 +41,7 @@ public class GrenadeProjectile : MonoBehaviour
 
     public void ExplosionEnded()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 
     private IEnumerator Explode()

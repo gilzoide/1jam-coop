@@ -12,11 +12,14 @@ public class WeaponInfo : ScriptableObject
         Grenade,
     }
 
+    [Header("Attributes")]
     public WeaponInfo.Type type;
     public string displayName;
-    public Sprite sprite;
     public float repeatDelay = 0.2f;
     public float damage = 5f;
     public int scoreWorth;
+
+    [Header("Runtime Components")]
+    public Sprite sprite;
     public Projectile projectilePrefab;
 }
