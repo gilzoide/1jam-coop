@@ -98,6 +98,7 @@ public class WeaponShop : MonoBehaviour, ICancelHandler
         {
             if (shopItem.button.interactable)
             {
+                ItemSelected(shopItem);
                 interactableButton = shopItem.button;
                 break;
             }
