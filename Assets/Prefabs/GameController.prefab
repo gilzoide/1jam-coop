@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   train: {fileID: 0}
   shop: {fileID: 0}
+  audioSource: {fileID: 5174859549189670306}
   levels:
   - {fileID: 4538300889463968215, guid: 48075a71e02b3b343b86355e85a5c9bc, type: 3}
   - {fileID: 4538300889463968215, guid: 1e9d796b3434a584fb205fb36d56a170, type: 3}

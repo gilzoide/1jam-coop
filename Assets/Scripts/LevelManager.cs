@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public Transform train;
     public WeaponShop shop;
+    public AudioSource audioSource;
     public GameObject[] levels;
 
     private int currentLevel;
@@ -24,6 +25,7 @@ public class LevelManager : MonoBehaviour
     {
         GameObject level = Instantiate(levels[currentLevel]);
         level.GetComponent<WaveManager>().train = train;
+        level.GetComponent<WaveManager>().audioSource = audioSource;
         level.GetComponent<WaveManager>().endLevel.AddListener(OpenShop);
         SetActivePlayers(true);
     }

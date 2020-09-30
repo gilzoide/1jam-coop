@@ -8,6 +8,8 @@ public class EnemyBase : MonoBehaviour
     public SpriteRenderer energyBarSpriteRenterer;
     public Animator animator;
     public Collider2D enemyCollider;
+    public AudioSource audioSource;
+    public AudioClip explosionAudioClip;
     public UnityEvent<EnemyInfo> onEnemyDestroyed;
     public UnityEvent<Transform> onSetupWithTrain;
     
@@ -27,8 +29,9 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public void SetupWithTrain(Transform train)
+    public void SetupWithTrainAndAudioSource(Transform train, AudioSource audioSource)
     {
+        this.audioSource = audioSource;
         onSetupWithTrain.Invoke(train);
     }
 
@@ -46,8 +49,14 @@ public class EnemyBase : MonoBehaviour
         onEnemyDestroyed.Invoke(enemyInfo);
     }
 
+    public void PlayDestroySound()
+    {
+        audioSource.PlayOneShot(explosionAudioClip);
+    }
+
     public void DestroySelf()
     {
+        animator.enabled = false;
         Destroy(gameObject);
     }
 }

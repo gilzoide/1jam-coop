@@ -9,6 +9,8 @@ public class WaveManager : MonoBehaviour
     public class Waves { public GameObject[] enemies; }
     public Waves[] waves;
 
+    public AudioSource audioSource;
+
     [HideInInspector]
     public Transform train;
     [HideInInspector]
@@ -38,7 +40,7 @@ public class WaveManager : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             var enemyBase = enemy.GetComponent<EnemyBase>();
             enemyBase.transform.localScale = new Vector3(spawnPosition.x / 10, 1, 1);
-            enemyBase.SetupWithTrain(train);
+            enemyBase.SetupWithTrainAndAudioSource(train, audioSource);
             enemyBase.energyHolder.onEnergyEmpty.AddListener(EnemyDied);
         }
     }

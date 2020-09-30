@@ -378,6 +378,7 @@ MonoBehaviour:
   energyBarSpriteRenterer: {fileID: 2535217049017474866}
   animator: {fileID: 5371636986534915875}
   enemyCollider: {fileID: 3329899724127231278}
+  explosionAudioClip: {fileID: 8300000, guid: 1661a9431ff3cc379ab412e25a5d7a99, type: 3}
   onEnemyDestroyed:
     m_PersistentCalls:
       m_Calls:

@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 170597766586569660, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
+      propertyPath: explosionAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1fa6d750a7b4f6688031b4c76febce, type: 3}
     - target: {fileID: 2327184200006684092, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -107,5 +111,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 9143364030053574260, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1fa6d750a7b4f6688031b4c76febce, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
