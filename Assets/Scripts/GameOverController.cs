@@ -23,6 +23,12 @@ public class GameOverController : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(continueButton.gameObject);
     }
 
+    public void RetryGameplay()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
+    }
+
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
