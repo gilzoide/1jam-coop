@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayScoreInfo: {fileID: 11400000, guid: 2674df66b295b74d1b4e034781702a81, type: 2}
-  gameplayScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  gameplayScene: {fileID: 102900000, guid: 817c4876db5023643ab6cdd615b962b0, type: 3}
 --- !u!4 &1744815018
 Transform:
   m_ObjectHideFlags: 0
