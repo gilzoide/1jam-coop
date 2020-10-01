@@ -197,8 +197,8 @@ MonoBehaviour:
   damageText: {fileID: 7938463741206100726}
   delayText: {fileID: 6570100015738373676}
   priceText: {fileID: 4057927273281157981}
-  buyText: <color=green>BUY NOW!</color>
-  cannotBuyText: <color=red>No money =/</color>
+  buyText: <color=#00ff00>BUY NOW!</color>
+  cannotBuyText: <color=red>Not available</color>
 --- !u!114 &2381812040604464920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 3305153112850837232}
   - component: {fileID: 8397175407611736419}
   - component: {fileID: 4057927273281157981}
+  - component: {fileID: 2752191883495845988}
   m_Layer: 5
   m_Name: Price
   m_TagString: Untagged
@@ -471,6 +472,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 8397175407611736419}
   format: '{0}  ${1}  '
+--- !u!114 &2752191883495845988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444949822425043085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.74509805}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4732974492198963020
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15333834, y: 0.35900003}
   m_AnchorMax: {x: 0.82932335, y: 0.446}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 30.08}
+  m_SizeDelta: {x: 0, y: 38.10823}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &819683556522315060
 CanvasRenderer:
@@ -771,16 +787,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 1
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_Font: {fileID: 12800000, guid: 60e40d1bae2a74c0fa699ea7df5539c5, type: 3}
+    m_FontSize: 26
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 63
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NOME
+  m_Text: Name

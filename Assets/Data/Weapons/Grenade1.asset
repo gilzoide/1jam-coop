@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Grenade1
   m_EditorClassIdentifier: 
   type: 2
-  displayName: Grenade 1
-  sprite: {fileID: -5557420877203330147, guid: 0c2d8e897423b0e4fa47506ae9ecfb4e, type: 3}
+  displayName: Grenade I
   repeatDelay: 1
   damage: 20
-  scoreWorth: 0
+  scoreWorth: 500
+  sprite: {fileID: -5557420877203330147, guid: 0c2d8e897423b0e4fa47506ae9ecfb4e, type: 3}
   projectilePrefab: {fileID: 5058850785972925497, guid: fbec6787bd839de509550680ce74cf89, type: 3}

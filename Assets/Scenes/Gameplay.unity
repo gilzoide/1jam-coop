@@ -419,9 +419,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 576}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1636,10 +1636,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 433478237}
@@ -1695,46 +1691,6 @@ PrefabInstance:
       propertyPath: train
       value: 
       objectReference: {fileID: 1889688447}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: fa33731424645b1caae651a3a6f59b03, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: fa33731424645b1caae651a3a6f59b03, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: fa33731424645b1caae651a3a6f59b03, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[8]
-      value: 
-      objectReference: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[9]
-      value: 
-      objectReference: {fileID: 11400000, guid: fa33731424645b1caae651a3a6f59b03, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[10]
-      value: 
-      objectReference: {fileID: 11400000, guid: 46651e626364dbc69b627416fecf4d33, type: 2}
-    - target: {fileID: 2964382130218008145, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
-      propertyPath: weaponInfoToBeSold.Array.data[11]
-      value: 
-      objectReference: {fileID: 11400000, guid: fa33731424645b1caae651a3a6f59b03, type: 2}
     - target: {fileID: 3107387467949967898, guid: e843d4bc46d29a781ac1f686de2e145a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 99.4
