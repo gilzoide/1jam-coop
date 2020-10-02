@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec34ea67e3b481ee5a05bea0f9f0f39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
   rigidBody: {fileID: 3887135267976789992}
   personalWeaponInfo: {fileID: 11400000, guid: 617f60490acb2e363a4dc8ed67e3a8d0, type: 2}
   crosshair: {fileID: 2303550645676619649}
@@ -255,6 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawnPoint: {fileID: 5755963068716449448}
   faction: {fileID: 3780761777763133713}
+  defaultWeaponInfo: {fileID: 0}
 --- !u!114 &3780761777763133713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,3 +346,4 @@ MonoBehaviour:
   minAngle: -Infinity
   maxAngle: Infinity
   angularSpeed: 30
+  flipX: 0

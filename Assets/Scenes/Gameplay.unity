@@ -965,6 +965,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2019280399, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
+      propertyPath: levels.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019280399, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
       propertyPath: train
       value: 
       objectReference: {fileID: 1889688449}
@@ -972,6 +976,18 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 7305638377968695081}
+    - target: {fileID: 2019280399, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
+      propertyPath: levels.Array.data[2]
+      value: 
+      objectReference: {fileID: 4538300889463968215, guid: 69d06246c19e68141b7f64326df75b44, type: 3}
+    - target: {fileID: 2019280399, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
+      propertyPath: levels.Array.data[3]
+      value: 
+      objectReference: {fileID: 4538300889463968215, guid: c412ce6b855a6de43930bcd26d3f07fb, type: 3}
+    - target: {fileID: 2019280399, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
+      propertyPath: levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 4538300889463968215, guid: 48075a71e02b3b343b86355e85a5c9bc, type: 3}
     - target: {fileID: 1799882554786121389, guid: 51af9ade25ed7666ebb37ad6863f1cd1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

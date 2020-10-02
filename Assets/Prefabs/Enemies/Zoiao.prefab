@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: explosionAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 90e1e166d36d0a14ba29721626ab2e2a, type: 3}
+    - target: {fileID: 170597766586569660, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
+      propertyPath: enemyInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f4bd8381a8d8de479fcd3a0923825cc, type: 2}
     - target: {fileID: 2327184200006684092, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -57,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3329899724127231278, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.4930556
+      value: 1.2912914
       objectReference: {fileID: 0}
     - target: {fileID: 3329899724127231278, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.1875
+      value: 1.891892
       objectReference: {fileID: 0}
     - target: {fileID: 3329899724127231278, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
       propertyPath: m_Offset.x
@@ -99,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4510588179573907001, guid: 609a6363e1312a549964af254f28096a, type: 3}
+    - target: {fileID: 7325026633499279310, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
+      propertyPath: energyInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f4bd8381a8d8de479fcd3a0923825cc, type: 2}
     - target: {fileID: 7412192939805499741, guid: 27d3721faf0fa472daadaadcbc137380, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 4f;
+    public float speed = 3f;
     public Rigidbody2D rigidBody;
     public WeaponInfo personalWeaponInfo;
     public Crosshair crosshair;

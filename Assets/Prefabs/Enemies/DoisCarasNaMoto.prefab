@@ -47,6 +47,7 @@ MonoBehaviour:
   minAngle: 0
   maxAngle: 0
   angularSpeed: 30
+  flipX: 0
 --- !u!1 &1310618528968838662
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +270,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8108108, y: 1.6756756}
+    oldSize: {x: 0.9009009, y: 1.861862}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -330,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6636f34ca0b0aa944a263b076ab72eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyInfo: {fileID: 11400000, guid: f0d1c7888a3cfb6109a7ee15cec87e43, type: 2}
+  energyInfo: {fileID: 11400000, guid: 316094a2a1449bd4d92a87567f45616a, type: 2}
   onEnergyChanged:
     m_PersistentCalls:
       m_Calls:
@@ -373,11 +374,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffbd1ed52821d4d399e3c3d80c257f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInfo: {fileID: 11400000, guid: f0d1c7888a3cfb6109a7ee15cec87e43, type: 2}
+  enemyInfo: {fileID: 11400000, guid: 316094a2a1449bd4d92a87567f45616a, type: 2}
   energyHolder: {fileID: 7325026633499279310}
   energyBarSpriteRenterer: {fileID: 2535217049017474866}
   animator: {fileID: 5371636986534915875}
   enemyCollider: {fileID: 3329899724127231278}
+  audioSource: {fileID: 0}
   explosionAudioClip: {fileID: 8300000, guid: 1661a9431ff3cc379ab412e25a5d7a99, type: 3}
   onEnemyDestroyed:
     m_PersistentCalls:
