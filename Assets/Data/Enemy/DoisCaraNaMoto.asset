@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40603b55790bbf9cb2b5a2a1aba4a6f, type: 3}
   m_Name: DoisCaraNaMoto
   m_EditorClassIdentifier: 
-  maxEnergy: 40
+  maxEnergy: 30
   scoreWorth: 60
