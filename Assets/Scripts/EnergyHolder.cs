@@ -4,11 +4,13 @@ using UnityEngine.Events;
 public class EnergyHolder : MonoBehaviour
 {
     public EnergyInfo energyInfo;
+    public bool invokeEmptyOnce = true;
     public UnityEvent<float> onEnergyChanged;
     public UnityEvent onEnergyEmpty;
 
     private float maxEnergy;
     private float inverseMaxEnergy;
+    private bool emptyInvoked = false;
 
     void Start()
     {
@@ -22,8 +24,9 @@ public class EnergyHolder : MonoBehaviour
         protected set {
             _currentEnergy = Mathf.Clamp(value, 0f, maxEnergy);
             onEnergyChanged.Invoke(_currentEnergy * inverseMaxEnergy);
-            if (value <= 0f)
+            if (value <= 0f && !(invokeEmptyOnce && emptyInvoked))
             {
+                emptyInvoked = true;
                 onEnergyEmpty.Invoke();
             }
         }

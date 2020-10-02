@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAlpha: {fileID: 5244196795836426507}
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 6076224718878611946}
 --- !u!1 &9039735403978570159
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +473,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7489618188319654562, guid: 34fa575f73f5fa26098e56e7015ec01c, type: 3}
   m_PrefabInstance: {fileID: 3720938937392044873}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6076224718878611946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7489618188319654563, guid: 34fa575f73f5fa26098e56e7015ec01c, type: 3}
+  m_PrefabInstance: {fileID: 3720938937392044873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4645218076528979394
 PrefabInstance:
   m_ObjectHideFlags: 0
